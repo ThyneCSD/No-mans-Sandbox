@@ -7,6 +7,7 @@ TagManager:
   - Anchor
   - Key
   - Door
+  - Object
   layers:
   - Default
   - TransparentFX

@@ -2,28 +2,18 @@ using UnityEngine;
 
 public class Button : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
-    void Update()
-    {
-        
-    }
+    private bool wasPressed = false;
     //Deze comment zet ik hier neer zodat het lijkt alsof ik oprecht comments gebruik.
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && !wasPressed)
         {
             Debug.Log("Button pressed!");
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+            wasPressed = true;
+        } else if (collision.gameObject.CompareTag("Player") && wasPressed)
         {
-            Debug.Log("Button pressed!");
+            Debug.Log("Button was UNpressed");
+            wasPressed = false;
         }
     }
 }
