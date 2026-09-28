@@ -4,7 +4,8 @@ public class Fan : MonoBehaviour
 {
     [Range(0f, 100f)]
     public float fanSpeed;
-    public bool isPowerOn = true;
+    public bool isPowerOn = false;
+
     private void OnTriggerStay(Collider other)
     {
         if (!isPowerOn) return;
@@ -12,6 +13,12 @@ public class Fan : MonoBehaviour
         if (rb != null)
         {
                 rb.AddForce(Vector3.up * fanSpeed, ForceMode.Force);
+        }
+
+        CharacterController controller = other.GetComponentInParent<CharacterController>();
+        if (controller != null)
+        {
+            controller.Move(Vector3.up * fanSpeed * Time.fixedDeltaTime);
         }
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    private bool openDoor = false;
+    public bool openDoor = false;
     private float openTimer = 0f;
     public float openDuration = 1f;
     public float speed = 1f;
