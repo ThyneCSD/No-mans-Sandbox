@@ -8,16 +8,17 @@ public class Fan : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-            if (other != null)
+        Rigidbody rb = other.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            if (up)
             {
-                if (!up)
-                {
-                    other.gameObject.Move(Vector3.right * windStrength * Time.deltaTime);
-                }
-                else
-                {
-                    other.gameObject.Move(Vector3.up * windStrength * Time.deltaTime);
-                }
+                rb.AddForce(Vector3.up * windStrength, ForceMode.Force);
             }
+            else
+            {
+                rb.AddForce(Vector3.down * windStrength, ForceMode.Force);
+            }
+        }
     }
 }
