@@ -4,7 +4,8 @@ public class Fan : MonoBehaviour
 {
     [Range(0f, 100f)]
     public float fanSpeed;
-    public bool isPowerOn = true;
+    public bool isPowerOn = false;
+
     private void OnTriggerStay(Collider other)
     {
         if (!isPowerOn) return;
