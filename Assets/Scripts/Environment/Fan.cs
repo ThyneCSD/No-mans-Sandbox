@@ -14,5 +14,11 @@ public class Fan : MonoBehaviour
         {
                 rb.AddForce(Vector3.up * fanSpeed, ForceMode.Force);
         }
+
+        CharacterController controller = other.GetComponentInParent<CharacterController>();
+        if (controller != null)
+        {
+            controller.Move(Vector3.up * fanSpeed * Time.fixedDeltaTime);
+        }
     }
 }
