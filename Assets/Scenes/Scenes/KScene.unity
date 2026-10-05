@@ -1759,6 +1759,7 @@ GameObject:
   m_Component:
   - component: {fileID: 730581340}
   - component: {fileID: 730581339}
+  - component: {fileID: 730581343}
   - component: {fileID: 730581341}
   - component: {fileID: 730581342}
   m_Layer: 0
@@ -1991,6 +1992,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &730581343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730581338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f52c865746a044b8b0ddca5a28affd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicList
+  MusicPlaylist:
+  - {fileID: 8300000, guid: feb096b49c4c00341ac6ba7efc1318bc, type: 3}
+  - {fileID: 8300000, guid: c133e1177b976da4b8f1c0e5b49e5af7, type: 3}
+  - {fileID: 8300000, guid: 2b9b5a06d67be254dbe56420d11095a2, type: 3}
+  shuffle: 1
 --- !u!1 &737663971
 GameObject:
   m_ObjectHideFlags: 0
