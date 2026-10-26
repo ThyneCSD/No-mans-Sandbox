@@ -17,10 +17,5 @@ public class Glass : MonoBehaviour
         {
             boxCollider.isTrigger = false;
         }
-
-        if (cubeRenderer != null)
-        {
-            cubeRenderer.material.color = Color.green;
-        }
     }
 }
