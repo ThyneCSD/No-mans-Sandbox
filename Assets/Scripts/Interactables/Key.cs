@@ -31,6 +31,7 @@ public class Key : MonoBehaviour
             openDoor = true;
             openTimer = 0f;
             Debug.Log("Door opened");
+            Destroy(collision.gameObject);
         }
     }
 }

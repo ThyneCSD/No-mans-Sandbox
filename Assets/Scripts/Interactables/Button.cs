@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Button : MonoBehaviour
 {
-    private bool wasPressed = false;
+    public bool wasPressed = false;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player") && !wasPressed)
