@@ -8,6 +8,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Premade/SampleScene.unity
     guid: 55daccc09a3b69647bbab145b54a3ab3
+  - enabled: 1
+    path: Assets/Scenes/Scenes/Grass.unity
+    guid: 0782877b2d38dfa3cb2102fa19627475
+  - enabled: 1
+    path: Assets/Scenes/Scenes/MainMenu.unity
+    guid: 7410e71e1e1f99c4f9c25bf30c1f2f27
+  - enabled: 1
+    path: Assets/Scenes/Scenes/MainScene.unity
+    guid: 3696d4e22eb0a944d8094cc93eeb01d0
+  - enabled: 1
+    path: Assets/Scenes/Scenes/MScene.unity
+    guid: 0bc2ac9cc9edd114fbc5f5244b557724
+  - enabled: 1
+    path: Assets/Scenes/Scenes/TScene.unity
+    guid: 78eb74fca7ecc7d48ad022430056fb5f
+  - enabled: 1
+    path: Assets/Scenes/Scenes/KScene.unity
+    guid: c5f0ceecbf5082d49abc3953b3d324b5
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
