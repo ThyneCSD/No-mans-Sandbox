@@ -3,16 +3,17 @@ using UnityEngine;
 public class Fan : MonoBehaviour
 {
     [Range(0f, 50f)]
-    public float fanSpeed;
+    public float fanSpeed = 10f;
     public bool isPowerOn = false;
 
     private void OnTriggerStay(Collider other)
     {
         if (!isPowerOn) return;
+
         Rigidbody rb = other.GetComponent<Rigidbody>();
         if (rb != null)
         {
-                rb.AddForce(Vector3.up * fanSpeed, ForceMode.Force);
+            rb.AddForce(Vector3.up * fanSpeed, ForceMode.Force);
         }
 
         CharacterController controller = other.GetComponentInParent<CharacterController>();
@@ -20,5 +21,10 @@ public class Fan : MonoBehaviour
         {
             controller.Move(Vector3.up * fanSpeed * Time.fixedDeltaTime);
         }
+    }
+
+    public void SetFanSpeed(float newSpeed)
+    {
+        fanSpeed = newSpeed;
     }
 }
