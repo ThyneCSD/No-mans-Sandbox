@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Fan : MonoBehaviour
 {
-    [Range(0f, 100f)]
+    [Range(0f, 50f)]
     public float fanSpeed;
     public bool isPowerOn = false;
 
