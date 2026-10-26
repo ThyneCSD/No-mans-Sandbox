@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class SwitchImages : MonoBehaviour
 {
-    [SerializeField] private bool isglass = true;
+    [SerializeField] public bool isglass = true;
     [SerializeField] private Texture glassTrue;
     [SerializeField] private Texture glassFalse;
     void Start()
@@ -19,11 +19,11 @@ public class SwitchImages : MonoBehaviour
 
     public void SwitchImage()
 {
-    if (isglass)
+    if (isglass == true)
     {
         GetComponent<RawImage>().texture = glassTrue;
     }
-    else
+    else if (isglass == false)
     {
         GetComponent<RawImage>().texture = glassFalse;
     }

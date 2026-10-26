@@ -1,13 +1,13 @@
+using System.Diagnostics;
 using UnityEngine;
 
 public class MickButton : MonoBehaviour
 {
-    // Drag all 5 of your glass/cube objects into this list in the Unity Inspector
     public Glass[] glassTargets;
+    public SwitchImages SwitchImages;
 
     private void OnTriggerEnter(Collider other)
     {
-        // Loop through all the glass objects in the list and trigger them
         if (glassTargets != null)
         {
             foreach (Glass glass in glassTargets)
@@ -15,11 +15,11 @@ public class MickButton : MonoBehaviour
                 if (glass != null)
                 {
                     glass.PressButton();
+                    SwitchImages.isglass = !SwitchImages.isglass;
                 }
             }
         }
 
-        // Turn the button green when touched
         Renderer btnRenderer = GetComponent<Renderer>();
         if (btnRenderer != null)
         {
