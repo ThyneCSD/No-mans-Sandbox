@@ -8,6 +8,7 @@ public class Key : MonoBehaviour
     public float openDuration = 1f;
     public float speed = 1f;
 
+
     private void Update()
     {
         if (!openDoor)
