@@ -1,18 +1,21 @@
 using UnityEngine;
 
-public class Button : MonoBehaviour
+public class PressButton : MonoBehaviour
 {
     public bool wasPressed = false;
-    private void OnCollisionEnter(Collision collision)
+    public float cooldown = 0.5f;
+
+    private float lastPressTime = -10f;
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player") && !wasPressed)
-        {
-            Debug.Log("Button pressed!");
-            wasPressed = true;
-        } else if (collision.gameObject.CompareTag("Player") && wasPressed)
-        {
-            Debug.Log("Button was UNpressed");
-            wasPressed = false;
-        }
+        Debug.Log("Trigger hit by: " + other.name + " tag: " + other.tag);
+
+        if (!other.CompareTag("Player")) return;
+        if (Time.time - lastPressTime < cooldown) return;
+        lastPressTime = Time.time;
+
+        wasPressed = !wasPressed;
+        Debug.Log(wasPressed ? "Button pressed" : "Button was unpressed");
     }
 }

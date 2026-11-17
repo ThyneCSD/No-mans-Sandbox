@@ -2,16 +2,26 @@ using UnityEngine;
 
 public class Ifstatement : MonoBehaviour
 {
-    [SerializeField] private Button Button;
+    [SerializeField] private PressButton button;
     [SerializeField] private GameObject keyCard;
 
     private bool hasSpawned = false;
+
+    private void Start()
+    {
+        Debug.Log("Ifstatement started. button: " + button + " keyCard: " + keyCard);
+    }
+
     private void Update()
     {
-        if (Button.wasPressed && !hasSpawned)
+        if (button == null || keyCard == null) return;
+
+        if (button.wasPressed && !hasSpawned)
         {
-            Instantiate(keyCard, transform.position + Vector3.up * 1, transform.rotation);
+            Vector3 pos = transform.position + Vector3.up;
+            Instantiate(keyCard, pos, transform.rotation);
             hasSpawned = true;
+            Debug.Log("Key spawned at " + pos);
         }
     }
 }
