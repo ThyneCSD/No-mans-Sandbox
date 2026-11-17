@@ -2,24 +2,22 @@ using UnityEngine;
 
 public class pressurePlate : MonoBehaviour
 {
+    public GameObject keyPrefab;
+    public float spawnOffset = 0.5f;
+
     private bool isPressed = false;
-    public Key key;
+
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Object") && !isPressed)
+        if (!collision.gameObject.CompareTag("Player") || isPressed) return;
+
+        isPressed = true;
+        Debug.Log("Pressure plate pressed!");
+
+        if (keyPrefab != null)
         {
-            Debug.Log("Pressure plate pressed!");
-            isPressed = true;
-            key.openDoor = true;
+            Vector3 spawnPos = transform.position + (transform.up) * spawnOffset;
+            Instantiate(keyPrefab, spawnPos, Quaternion.identity);
         }
     }
-
-    //private void OnCollisionExit(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Object") && isPressed)
-    //    {
-    //        isPressed = false;
-    //        Debug.Log("Pressure plate released!");
-    //    }
-    //}
 }
