@@ -6,9 +6,9 @@ public class WinSwitch : MonoBehaviour
 {
     [SerializeField] private string sceneName;
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene(sceneName);
         }
