@@ -517,7 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ab85b3659c15148ac2034c3dc6b793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FanButton
-  fan: {fileID: 0}
+  fan: {fileID: 311158171}
   buttonText: {fileID: 1869065384}
 --- !u!4 &145187129 stripped
 Transform:
@@ -1887,7 +1887,7 @@ MonoBehaviour:
   - {fileID: 1438816243}
   - {fileID: 1321116957}
   - {fileID: 2022710967}
-  SwitchImages: {fileID: 0}
+  SwitchImages: {fileID: 1599658128}
 --- !u!65 &382640494
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3868,17 +3868,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8876502444183769307, guid: b32d7bd973e2c1f48b0f1fa1a19f14c2, type: 3}
   m_PrefabInstance: {fileID: 1021305466}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1021305469 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6469597651098924653, guid: b32d7bd973e2c1f48b0f1fa1a19f14c2, type: 3}
-  m_PrefabInstance: {fileID: 1021305466}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021305468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 031eb161ddd22a84cba4422f6025fd83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Button
 --- !u!114 &1021305470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3891,7 +3880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3cedfc4e1ce4e42b4740d29d47ad89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ifstatement
-  Button: {fileID: 1021305469}
+  button: {fileID: 0}
   keyCard: {fileID: 4265147098037350517, guid: 574fac32089beb5179634e845335b8f4, type: 3}
 --- !u!1 &1053895016
 GameObject:
