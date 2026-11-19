@@ -1,24 +1,42 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FanButton : MonoBehaviour
 {
-    private bool wasPressed = false;
     public Fan fan;
-    [SerializeField] private GameObject buttonText;
-    private void OnCollisionEnter(Collision collision)
+    public float cooldown = 0.5f;
+
+    [Header("RawImages (each already has its own texture set)")]
+    public RawImage powerOnImage;
+    public RawImage powerOffImage;
+
+    private float lastPressTime = -10f;
+    private bool? lastShown = null;
+
+    private void Update()
     {
-        if (collision.gameObject.CompareTag("Player") && !wasPressed)
-        {
-            Debug.Log("Button pressed!");
-            wasPressed = true;
-            fan.isPowerOn = true;
-            buttonText.SetActive(true);
-        } else if (collision.gameObject.CompareTag("Player") && wasPressed)
-        {
-            Debug.Log("Button was UNpressed");
-            wasPressed = false;
-            fan.isPowerOn = false;
-            buttonText.SetActive(false);
-        }
+        if (fan == null) return;
+        if (lastShown == fan.isPowerOn) return;
+
+        lastShown = fan.isPowerOn;
+        ApplyVisual(fan.isPowerOn);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag("Player")) return;
+        if (Time.time - lastPressTime < cooldown) return;
+        lastPressTime = Time.time;
+
+        if (fan == null) return;
+
+        fan.isPowerOn = !fan.isPowerOn;
+        Debug.Log("Fan power: " + fan.isPowerOn);
+    }
+
+    private void ApplyVisual(bool on)
+    {
+        if (powerOnImage != null) powerOnImage.gameObject.SetActive(on);
+        if (powerOffImage != null) powerOffImage.gameObject.SetActive(!on);
     }
 }

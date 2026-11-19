@@ -22,7 +22,7 @@ public class Fan : MonoBehaviour
             controller.Move(Vector3.up * fanSpeed * Time.fixedDeltaTime);
         }
     }
-
+    
     public void SetFanSpeed(float newSpeed)
     {
         fanSpeed = newSpeed;
