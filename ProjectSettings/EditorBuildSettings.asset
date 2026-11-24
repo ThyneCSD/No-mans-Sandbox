@@ -9,13 +9,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Scenes/MainMenu.unity
     guid: 7410e71e1e1f99c4f9c25bf30c1f2f27
   - enabled: 1
-    path: Assets/Scenes/Scenes/MainScene.unity
+    path: Assets/Scenes/Scenes/MainScene3.unity
     guid: 3696d4e22eb0a944d8094cc93eeb01d0
   - enabled: 1
     path: Assets/Scenes/Scenes/Grass.unity
     guid: 0782877b2d38dfa3cb2102fa19627475
   - enabled: 1
-    path: Assets/Scenes/Scenes/Test_Map.unity
+    path: Assets/Scenes/Scenes/MainScene.unity
     guid: 7b533dfe561bc47c8975c955fe4ef3d3
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
